@@ -27,5 +27,5 @@ const store = new Vuex.Store({
             state.code=code;
         }
     }
-})
+});
 export default store

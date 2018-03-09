@@ -2,7 +2,7 @@
     <div id="home">
          <div class="top">
             <router-link to="/">
-                <img src="../assets/images/wap-logo-icon.png" alt="" class="logo_icon">
+                <img src="../assets/images/wap-logo-icon@2x.png" alt="" class="logo_icon">
             </router-link>
             
             <div class="btn_top" @click="handleDownload()">下载APP</div>

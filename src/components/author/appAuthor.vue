@@ -1,9 +1,10 @@
 <template>
     <div id="appAuthor">
-        <div class='top_div'>
-            <img src='../../assets/images/back@2x.png' class="backImg">
-            <p>申请作者</p>
-        </div>
+        <mt-header class="com-header" :title="$route.meta.des">
+            <a href="javascript:window.history.go(-1);" slot="left">
+                <mt-button icon="back"></mt-button>
+            </a>
+        </mt-header>
         <input type="text" class='oInput'  placeholder="昵称">
         <input type="text" class='oInput'  placeholder="姓名">
         <input type="text" class='oInput'  placeholder="笔名">

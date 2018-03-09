@@ -1,10 +1,15 @@
 <template>
     <div id="more">
         <loading :show="isShow"></loading>
-        <div class="top_d">
-           <img src="../../assets/images/back@2x.png" @click="handleBack()">
-           <p>小编推荐</p>
-        </div>
+        <mt-header class="com-header" :title="$route.meta.des">
+            <a href="javascript:window.history.go(-1);" slot="left">
+                <mt-button icon="back"></mt-button>
+            </a>
+        </mt-header>
+        <!--<div class="top_d">-->
+           <!--<img src="../../assets/images/back@2x.png" @click="handleBack()">-->
+           <!--<p>小编推荐</p>-->
+        <!--</div>-->
         <div class="text_d" v-for="item in moreList" @click="handleGo(item.bookId)">
             <img :src="item.bookImage">
             <div class="con_d">

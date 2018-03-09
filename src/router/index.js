@@ -25,15 +25,15 @@ import feedPepper from '@/components/feed/feedPepper'
 Vue.use(Router);
 let routers=[
     {path: '/', redirect:'/home/index'},
-    {path: '/login', name: 'Login', component: Login},
-    {path: '/register', name: 'Register', component: Register},
+    {path: '/login', name: 'Login',meta:{des:'登录'}, component: Login},
+    {path: '/register', name: 'Register',meta:{des:'注册'}, component: Register},
     {path: '/password', name: 'Password', component: Password},
-    {path: '/resetPassword', name: 'resetPassword', component: resetPassword},
+    {path: '/resetPassword', name: 'resetPassword',meta:{des:'修改密码'}, component: resetPassword},
     {path: '/noAuthor', name: 'noAuthor', component: noAuthor},
-    {path: '/appAuthor', name: 'appAuthor', component: appAuthor},
-    {path: '/contactUs', name: 'contactUs', component: contactUs},
+    {path: '/appAuthor', name: 'appAuthor',meta:{des:'申请作者'}, component: appAuthor},
+    {path: '/contactUs', name: 'contactUs',meta:{des:'联系我们'}, component: contactUs},
     {path: '/feed', name: 'feed', component:feed},
-    {path: '/more', name: 'more', component: more},
+    {path: '/more', name: 'more',meta:{des:'小编推荐'}, component: more},
     {path: '/bookDetails/:bid', name: 'bookDetails', component: bookDetails},
     {path: '/home', name: 'Home', component: Home,
         children:[//子路由
@@ -45,7 +45,8 @@ let routers=[
     {path:'/user',redirect:'/user/index'},
     {path:'/user',component:require('@/components/user/index.vue'),
         children:[
-            { path:'index',name:'userCenter',meta:{des:'个人资料'},component:require('@/components/user/personal.vue') }
+            { path:'index',name:'userCenter',meta:{des:'个人资料'},component:require('@/components/user/personal.vue') },
+            { path:'bookshelf',name:'userBookshelf',meta:{des:'我的书架'},component:require('@/components/user/bookshelf.vue') }
         ]
     },
     {path: '/directory', name: 'directory', component: directory},
@@ -54,9 +55,12 @@ let routers=[
     {path: '/feedPepper', name: 'feedPepper', component: feedPepper},
 ];
 const router = new Router({
+
+    base:'/mob',
     routes: routers,
     linkActiveClass:'active-link'
 });
+
 // router.beforeEach((to, from, next) => {
 //     if (cookie.get().token) {
 //         next()
